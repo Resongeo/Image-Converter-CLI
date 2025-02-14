@@ -3,6 +3,9 @@ use image::{DynamicImage, ImageFormat};
 use std::path::Path;
 
 #[derive(Parser)]
+#[command(name = "Image Converter")]
+#[command(version)]
+#[command(about = "Convert an image to another format")]
 struct Cli {
     path: String,
     format: String,
