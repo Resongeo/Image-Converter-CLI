@@ -23,9 +23,7 @@ fn get_filename_from_path(path: &String) -> &str {
 fn format_to_image_format(format: &String) -> ImageFormat {
     match format.to_lowercase().as_str() {
         "jpg" | "jpeg" => ImageFormat::Jpeg,
-        "gif" => ImageFormat::Gif,
         "webp" => ImageFormat::WebP,
-        "pnm" => ImageFormat::Pnm,
         "bmp" => ImageFormat::Bmp,
         "png" => ImageFormat::Png,
         _ => panic!("Unsupported format: {}", format),
