@@ -6,6 +6,9 @@ use std::path::Path;
 #[command(name = "Image Converter")]
 #[command(version)]
 #[command(about = "Convert an image to another format")]
+#[command(
+    long_about = "Convert an image to another format.\nSupported formats: jpg, jpeg, png, webp, pnm"
+)]
 struct Cli {
     path: String,
     format: String,
