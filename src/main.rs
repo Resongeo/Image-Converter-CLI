@@ -11,6 +11,7 @@ use std::path::Path;
 )]
 struct Cli {
     path: String,
+    #[arg(short)]
     format: String,
 }
 
