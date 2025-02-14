@@ -1,5 +1,5 @@
 [package]
-name = "Image-Converter-CLI"
+name = "ic"
 version = "0.1.0"
 edition = "2024"
 
