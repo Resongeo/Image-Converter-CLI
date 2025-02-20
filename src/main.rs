@@ -1,5 +1,6 @@
 use clap::Parser;
 use image::{DynamicImage, ImageFormat};
+use indicatif::ProgressBar;
 use std::path::Path;
 
 #[derive(Parser)]
@@ -33,6 +34,11 @@ fn format_to_image_format(format: &String) -> ImageFormat {
 
 fn main() {
     let args = Cli::parse();
+
+    let spinner = ProgressBar::new_spinner();
+    spinner.set_message("Converting image...");
+    spinner.enable_steady_tick(std::time::Duration::from_millis(100));
+
     let mut img = image::open(&args.path).expect("Couldn't open image");
     let filename = format!(
         "{}.{}",
@@ -49,4 +55,6 @@ fn main() {
     };
 
     img.save_with_format(filename, requested_format).unwrap();
+
+    spinner.finish_with_message("Image convert complete!");
 }
